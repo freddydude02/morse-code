@@ -5,7 +5,7 @@ const sorter = (str) => {
         /[^a-zA-Z0-9 \"\.\,\?\'\!\/\(\)\&\:\;\=\+\-\_\$\@]/.test(str) ||
         str === undefined
     ) {
-        return "error";
+        return new error("error out");
     } else if (str === "") {
         return "Type to begin translating";
     } else if (/[^./ \-]/.test(str)) {

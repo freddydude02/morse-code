@@ -40,19 +40,19 @@ describe("translates special characters to morse code correctly", () => {
 });
 describe("throws errors with innappropriate inputs", () => {
     it("returns error for inappropriate symbols", () => {
-        expect(sorter("%")).toBe("error");
-        expect(sorter("[")).toBe("error");
-        expect(sorter("]")).toBe("error");
-        expect(sorter("{")).toBe("error");
-        expect(sorter("}")).toBe("error");
-        expect(sorter()).toBe("error");
+        expect(() => sorter("%")).toThrow("error");
+        expect(() => sorter("[")).toThrow("error");
+        expect(() => sorter("]")).toThrow("error");
+        expect(() => sorter("{")).toThrow("error");
+        expect(() => sorter("}")).toThrow("error");
+        expect(() => sorter()).toThrow("error");
         expect(sorter("")).toBe("Type to begin translating");
     });
     it("returns error for inappropriate sentences", () => {
-        expect(sorter("----------")).toBe("error");
-        expect(sorter("..........")).toBe("error");
-        expect(sorter("...---------")).toBe("error");
-        expect(sorter(".........---")).toBe("error");
+        expect(() => sorter("----------")).toThrow("error");
+        expect(() => sorter("..........")).toThrow("error");
+        expect(() => sorter("...---------")).toThrow("error");
+        expect(() => sorter(".........---")).toThrow("error");
     });
 });
 describe("converts morse back to english", () => {

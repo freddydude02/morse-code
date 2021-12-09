@@ -4,7 +4,11 @@ const input = document.querySelector("#input");
 const output = document.querySelector("#output");
 
 const eventHandler = () => {
-    output.value = sorter(input.value);
+    try {
+        output.value = sorter(input.value);
+    } catch {
+        output.value = `Hey chill man, ( ${input.value} ) is not a valid input`;
+    }
 };
 
 input.addEventListener("input", eventHandler);

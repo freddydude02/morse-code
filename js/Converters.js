@@ -6,7 +6,7 @@ export const convertToMorse = (str) => {
         .toUpperCase()
         .split("")
         .map((key) => {
-            return morseCode[key] ? morseCode[key] : "error";
+            return morseCode[key] ? morseCode[key] : new error("error");
         })
         .join(" ");
 };
@@ -14,7 +14,7 @@ export const convertToEnglish = (str) => {
     return str
         .split(" ")
         .map((key) => {
-            return revMorseCode[key] ? revMorseCode[key] : "error";
+            return revMorseCode[key] ? revMorseCode[key] : new error("error");
         })
         .join("");
 };
